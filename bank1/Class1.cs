@@ -59,7 +59,7 @@ namespace BankAccountNS
         {
             if (m_frozen)
             {
-                throw new Exception ("Account frozen");
+                throw new Exception("Account frozen");
             }
 
             if (amount < 0)
@@ -67,6 +67,31 @@ namespace BankAccountNS
                 throw new ArgumentOutOfRangeException(" AMOUNT");
             }
 
+            m_balance += amount;
+
+        }
+
+        private void FreezeAccount()
+        {
+            m_frozen = true;
+
+        }
+
+        private void unFreezeAccount()
+        {
+            m_frozen = false;
+
+        }
+
+        public static void Main()
+        {
+            BankAccount ba = new BankAccount("Mr. Bryan Walton", 11.99);
+
+            ba.Credit(5.77);
+            ba.Credit(11.22);
+            Console.WriteLine("CURRENT BALANCE IS $ {0}", ba.Balance);
         }
     }
+}
+
 }
