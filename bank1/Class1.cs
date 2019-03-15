@@ -6,6 +6,7 @@ namespace BankAccountNS
     {
         // c0727250 Kunal sharma//
         // c0730478 Shoit Sharma//
+
         private string m_customerName;
         private double m_balance;
         private bool m_frozen = false;
@@ -51,7 +52,7 @@ namespace BankAccountNS
                 throw new ArgumentOutOfRangeException("amount");
             }
 
-            m_balance += amount;
+            m_balance -= amount;
 
         }
 
@@ -94,4 +95,4 @@ namespace BankAccountNS
     }
 }
 
-}
+
